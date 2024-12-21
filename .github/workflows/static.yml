@@ -36,7 +36,7 @@ jobs:
       - name: Upload public directory into artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './*'
+          path: './public'
       # - name: Upload asset directory into artifact
       #   uses: actions/upload-pages-artifact@v3
       #   with:
