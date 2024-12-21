@@ -33,14 +33,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: copy files into staging
+        shell: bash
+        run: |
+          mkdir staging
+          cp assets/* staging
+          cp public/* staging
       - name: Upload public directory into artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './public'
-      # - name: Upload asset directory into artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: './assets'
+          path: './staging'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
